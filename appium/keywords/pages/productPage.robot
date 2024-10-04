@@ -1,6 +1,3 @@
-*** Settings ***
-Library    AppiumLibrary
-
 *** Keywords ***
 
 Tap add to cart

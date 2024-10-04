@@ -1,6 +1,7 @@
 *** Settings ***
 Library    AppiumLibrary
 Library    Process
+Library    String
 
 Variables    ../../resource/data/config.yaml
 Variables    ../../resource/data/${platform}Data.yaml

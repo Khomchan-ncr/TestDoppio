@@ -1,10 +1,10 @@
 *** Keywords ***
 Start appium server
-    Start arocess    ${appium_server}    --port    ${appium_port}
-    Sleep    3s    # Wait for the server to start
+    process.Start process    ${appium_server}    --port    ${appium_port}
+    BuiltIn.Sleep    3s    # Wait for the server to start
 
 Stop appium server
-    Terminate Process
+    process.Terminate Process
 
 Open demo application
     IF  '${platform}' == 'ios'
@@ -20,7 +20,7 @@ Swipe until page contain element
     [Arguments]                       ${locator}
     ${status}                         Set Variable                              false
     WHILE                             '${status}' == 'false'
-        Sleep                             1s
+        BuiltIn.Sleep                             1s
         ${result}                         AppiumLibrary.Get Matching Xpath Count    ${locator}
         IF                                ${result} > 0
             ${status}                         Set Variable                              true
