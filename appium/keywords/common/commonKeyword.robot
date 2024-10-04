@@ -14,7 +14,7 @@ Open demo application
         AppiumLibrary.Open application    ${urlHost}    automationName=${${platform}.automationName}    platformName=${${platform}.platformName}    platformVersion=${${platform}.platformVersion}
     ...    appPackage=${${platform}.appPackage}    appActivity=${${platform}.appActivity}
     END
-    Wait until show on display    ${main_page_cart_icon}    ${GLOBAL_TIMEOUT}
+    commonKeyword.Wait until show on display    ${main_page_cart_icon}    ${GLOBAL_TIMEOUT}
 
 Swipe until page contain element
     [Arguments]                       ${locator}
@@ -38,12 +38,12 @@ Wait until show on display
 
 Click element when element show on display
     [Arguments]    ${locator}
-    Wait until show on display    ${locator}    ${GLOBAL_TIMEOUT}
+    commonKeyword.Wait until show on display    ${locator}    ${GLOBAL_TIMEOUT}
     AppiumLibrary.Click element    ${locator}
 
 Input data in box field when box show on display
     [Arguments]    ${locator}    ${text}
-    Wait until show on display    ${locator}    ${GLOBAL_TIMEOUT}
+    commonKeyword.Wait until show on display    ${locator}    ${GLOBAL_TIMEOUT}
     AppiumLibrary.Input text    ${locator}    ${text}
 
 
